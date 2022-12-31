@@ -1,0 +1,13 @@
+*.pyc
+*.pyo
+*.db
+.DS_Store
+.coverage
+.idea/**
+Google.py
+# .github/workflows/**
+google-client-data.json
+token_photoslibrary_v1.pickle
+.vscode/settings.json
+venv_dir/
+static/

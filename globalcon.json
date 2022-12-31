@@ -1,0 +1,86 @@
+[
+{
+  "model": "main.globalconfig",
+  "pk": 1,
+  "fields": {
+    "union": 1,
+    "name": "leak_packet_in_percentage",
+    "value": ".05",
+    "description": "give some quantity of packet when the milk packet leak avrage",
+    "created_by": 1,
+    "modified_by": 1,
+    "time_created": "2020-02-11T10:29:33.144Z",
+    "time_modified": "2020-02-11T10:29:40.044Z"
+  }
+},
+{
+  "model": "main.globalconfig",
+  "pk": 2,
+  "fields": {
+    "union": 1,
+    "name": "tds",
+    "value": "2",
+    "description": "Taking TDS percentage from commision amount",
+    "created_by": 1,
+    "modified_by": 1,
+    "time_created": "2020-02-12T06:00:45.974Z",
+    "time_modified": "2020-02-12T06:00:50.787Z"
+  }
+},
+{
+  "model": "main.globalconfig",
+  "pk": 3,
+  "fields": {
+    "union": 1,
+    "name": "slip_charge",
+    "value": "1",
+    "description": "Taking one rupee from commission fro slip charge",
+    "created_by": 1,
+    "modified_by": 1,
+    "time_created": "2020-02-12T06:00:45.974Z",
+    "time_modified": "2020-02-12T06:00:50.787Z"
+  }
+},
+{
+  "model": "main.globalconfig",
+  "pk": 4,
+  "fields": {
+    "union": 1,
+    "name": "insurance",
+    "value": "2",
+    "description": "Insurance is detected from agent's commission amout",
+    "created_by": 1,
+    "modified_by": 1,
+    "time_created": "2020-02-12T06:00:45.974Z",
+    "time_modified": "2020-02-12T06:00:50.787Z"
+  }
+},
+{
+  "model": "main.globalconfig",
+  "pk": 5,
+  "fields": {
+    "union": 1,
+    "name": "cash_commission",
+    "value": "4.5",
+    "description": "Commission detected from agent's Cash commission amount",
+    "created_by": 1,
+    "modified_by": 1,
+    "time_created": "2020-02-12T06:00:45.974Z",
+    "time_modified": "2020-02-12T06:00:50.787Z"
+  }
+},
+{
+  "model": "main.globalconfig",
+  "pk": 6,
+  "fields": {
+    "union": 1,
+    "name": "card_commission",
+    "value": "4.5",
+    "description": "Commission detected from agent's Card commission amount",
+    "created_by": 1,
+    "modified_by": 1,
+    "time_created": "2020-02-12T06:00:45.974Z",
+    "time_modified": "2020-02-12T06:00:50.787Z"
+  }
+}
+]

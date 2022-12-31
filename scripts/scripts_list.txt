@@ -1,0 +1,4 @@
+# controled by cron
+0 * * * * /opt/virtualenv/aavin_admin/bin/python /opt/bin/aavin/aavin_admin/manage.py runscript send_CBEunions_days_milk_order_total_to_mkg
+0 * * * * /opt/virtualenv/aavin_admin/bin/python /opt/bin/aavin/aavin_admin/manage.py runscript duplicate_order_finder
+0 23 * * * /opt/virtualenv/aavin_admin/bin/python /opt/bin/aavin/aavin_admin/manage.py runscript reset_route_expiry_time

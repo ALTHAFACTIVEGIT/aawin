@@ -1,0 +1,92 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>Redirect</title>
+</head>
+
+<body>
+  <div class="row">
+    {% if STC == '000' %}
+    <div class="col" style="text-align: center;">
+      <img src="/static/media/payment-success.png">
+      <h1>Your Payment Was Successfull</h1>
+      <label>Transaction Id : {{TRN}} @ {{TET}}</label><br>
+      <label>Amount : {{AMT}}</label><br>
+      <label>You will be redirected to site in <label id='counter' style="color:red"></label> seconds</label><br>
+      {% if ordered_via_id != 1 %}
+      {% if request_from_id == 1 or request_from_id == 2 %}
+      <button type="button" class="btn btn-success" style="font-size: 30px;"><a
+          style="text-decoration: none; color: white;" href="http://aavincoimbatore.com/agent/order/form">Back To
+          Home</a></button>
+      {% else %}
+      <button type="button" class="btn btn-success" style="font-size: 30px;"><a
+          style="text-decoration: none; color: white;" href="http://aavincoimbatore.com/icustomer/order/form">Back
+          To Home</a></button>
+      {% endif %}
+      {% endif %}
+
+    </div>
+    {% else %}
+    <div class="col" style="text-align: center;">
+      {% if STC == '101' %}
+      <img src="/static/media/payment_pending.jpg" style="height: 25%;">
+      <h1>Your Payment Was Pending</h1>
+      {% else %}
+      <img src="/static/media/payment_fail.png" style="height: 25%;">
+      <h1>Your Payment Was Failed</h1>
+      {% endif %}
+      <label>Transaction Id : {{TRN}} @ {{TET}}</label><br>
+      <label>Amount : {{AMT}}</label><br>
+      <label>You will be redirected to site in <label id='counter' style="color:red"></label> seconds</label><br>
+      {% if ordered_via_id != 1 %}
+      {% if request_from_id == 1 or request_from_id == 2 %}
+      <button type="button" class="btn btn-success" style="font-size: 30px;"><a
+          style="text-decoration: none; color: white;" href="http://aavincoimbatore.com/agent/order/form">Back To
+          Home</a></button>
+      {% else %}
+      <button type="button" class="btn btn-success" style="font-size: 30px;"><a
+          style="text-decoration: none; color: white;" href="http://aavincoimbatore.com/icustomer/order/form">Back
+          To Home</a></button>
+      {% endif %}
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+</body>
+<script>
+  var counter = 10;
+  var request_from_id = "{{ request_from_id }}";
+  var ordered_via_id = "{{ ordered_via_id }}"
+  console.log(request_from_id);
+  setInterval(function () {
+    console.log(counter);
+    if (counter > 0) {
+      counter--
+      var dataNode = document.getElementById('counter');
+      dataNode.innerHTML = counter;
+
+    }
+    if (counter === 0) {
+        if (ordered_via_id != 1) {
+            if (request_from_id == 1 || request_from_id == 2) {
+                window.location.href = "http://aavincoimbatore.com/agent/order/form";
+            } else {
+                window.location.href = "http://aavincoimbatore.com/icustomer/order/form";
+            }
+        }
+
+    }
+  }, 1000);
+</script>
+
+</html>
